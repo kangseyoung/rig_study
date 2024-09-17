@@ -20,7 +20,7 @@ class PositionCollector():
         min_x, min_y, min_z, max_x, max_y, max_z = bbox
         center_x = (min_x + max_x) / 2
         center_z = (min_z + max_z) / 2
-        return (min_y, center_x, center_z)
+        return (center_x, min_y, center_z)
 
     def get_pos_quater_top_(self, mesh):
         """
@@ -35,7 +35,7 @@ class PositionCollector():
         quarter_x = (3 * max_x + min_x) / 4
         center_z = (min_z + max_z) / 2
         translation_y = max_y * 0.8
-        return (translation_y, quarter_x, center_z)
+        return (quarter_x,translation_y, center_z)
 
     def get_half_positions(self, mesh):
         """
@@ -96,7 +96,7 @@ class PositionCollector():
         bbox = cmds.exactWorldBoundingBox(mesh)
         min_x, min_y, min_z, max_x, max_y, max_z = bbox
         center_x = (min_x + max_x) / 2
-        return (min_y, center_x, min_z)
+        return (center_x, min_y, min_z)
 
     def get_pos_bottom_maxz_center(self, mesh):
         """
@@ -109,4 +109,4 @@ class PositionCollector():
         bbox = cmds.exactWorldBoundingBox(mesh)
         min_x, min_y, min_z, max_x, max_y, max_z = bbox
         center_x = (min_x + max_x) / 2
-        return (min_y, center_x, max_z)
+        return (center_x, min_y, max_z)
