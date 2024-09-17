@@ -46,7 +46,8 @@ class MakeHierachy():
         arms_hierachy = {"spine3":f"{pos}_clavicle",
                          f"{pos}_clavicle":f"{pos}_shoulder",
                          f"{pos}_shoulder":f"{pos}_elbow",
-                         f"{pos}_elbow":f"{pos}_hand"}
+                         f"{pos}_elbow":f"{pos}_wrist",
+                         f"{pos}_wrist":f"{pos}_hand"}
         for p , c in arms_hierachy.items():
             self.create_child_joint(parent=f"{p}",childeren=[f"{c}"])
 
@@ -64,7 +65,9 @@ class MakeHierachy():
         legs_hierachy = {"pelvis":f"{pos}_but",
                          f"{pos}_but":f"{pos}_knee",
                          f"{pos}_knee":f"{pos}_foot",
-                         f"{pos}_foot":f"{pos}_toe"}
+                         f"{pos}_foot":f"{pos}_ankle",
+                         f"{pos}_ankle":f"{pos}_toe"}
+        
         for p , c in legs_hierachy.items():
             self.create_child_joint(parent=f"{p}",childeren=[f"{c}"])
 
