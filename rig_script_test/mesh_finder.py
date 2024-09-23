@@ -1,4 +1,6 @@
 import re
+import sys
+sys.path.append('D:\maya_rig_test')
 import maya.cmds as cmds
 import fnmatch
 
